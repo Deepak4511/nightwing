@@ -367,3 +367,239 @@ border: 1px solid rgba(168,85,247,0.3) !important;
   background: rgba(168, 85, 247, 0.5);
   border-radius: 10px;
 }
+
+
+/* category card */
+
+
+/* hero */
+
+.hero_card_sec{
+  border: 1px solid rgba(168, 85, 247, 0.6);
+    padding: 27px 42px;
+    border-radius: 30px;
+    position: relative;
+}
+    
+
+
+/* Background gradient */
+.explore-page {
+  background: radial-gradient(circle at top left, #0f0124, #050011, #000);
+  color: #fff;
+}
+
+/* Navbar */
+.top-navbar ul li a {
+  color: #bbb;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.top-navbar ul li a.active,
+.top-navbar ul li a:hover {
+  color: #a855f7;
+  border-bottom: 2px solid #a855f7;
+}
+
+/* Search Bar */
+.search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 20px;
+  padding: 6px 15px;
+  width: 200px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-icon {
+  color: #a855f7;
+  font-size: 1.2rem;
+}
+
+/* Filter Buttons */
+.neon-btn {
+  border-radius: 25px;
+  padding: 5px 18px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.neon-btn.btn-primary {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  border: none;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.neon-btn.btn-primary:hover {
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+}
+
+.btn-outline-light:hover {
+  background: #a855f7;
+  border-color: #a855f7;
+}
+
+/* Category Card */
+.category-card {
+  background: rgba(18, 17, 30, 0.9);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+}
+
+.category-img-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.category-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.category-title {
+  color: #fff;
+}
+
+.category-followers {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer-link {
+  color: #999;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+
+
+/* explore-creator */
+
+.category_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.category_btn {
+  background: rgba(25, 25, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.category_btn:hover {
+  background: linear-gradient(90deg, #8a2be2, #ff00ff);
+  border-color: #ff00ff;
+  box-shadow: 0 0 15px #ff00ff, 0 0 25px #8a2be2;
+  transform: scale(1.05);
+}
+
+.category_box{
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-radius: 50px;
+  padding: 50px;
+}
+
+
+/* login */
+
+.login-wrapper {
+  background: radial-gradient(circle at 30% 30%, #24143a, #0c0c0c 90%);
+  min-height: 100vh;
+}
+
+.login-card {
+  background: rgba(30, 30, 45, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(165, 94, 255, 0.3);
+  width: 400px;
+  max-width: 90%;
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 10px #b84fce, 0 0 20px #b84fce, 0 0 30px #b84fce;
+}
+
+.neon-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(184, 79, 206, 0.6);
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.neon-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #b84fce, 0 0 20px #7d3cff;
+  border-color: #b84fce;
+}
+
+.btn-neon {
+  background: linear-gradient(90deg, #b84fce, #7d3cff);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 15px #b84fce, 0 0 30px #7d3cff;
+  transform: translateY(-2px);
+}
+
+.neon-link {
+  color: #b84fce;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.neon-link:hover {
+  text-shadow: 0 0 10px #b84fce;
+}
+
+
+/* register */
+
+
