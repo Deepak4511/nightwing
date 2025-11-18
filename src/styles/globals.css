@@ -603,3 +603,115 @@ border: 1px solid rgba(168,85,247,0.3) !important;
 /* register */
 
 
+
+/* profile */
+
+
+.profile-section {
+  color: #fff;
+
+}
+
+/* Profile Avatar */
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #a533ff;
+  box-shadow: 0 0 25px #a533ff;
+}
+
+/* Buttons */
+.neon-btn {
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6a4bff, #a46aff);
+}
+
+.btn-pink {
+  background: linear-gradient(90deg, #ff0099, #d000ff);
+}
+
+.neon-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Tabs */
+.nav-tabs {
+  border-bottom: 1px solid #2b2b40;
+}
+
+.nav-tabs .nav-link {
+  color: #aaa;
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff;
+  border-bottom: 3px solid #a533ff;
+}
+
+/* Media Cards */
+.media-card {
+  background: #16161f;
+  border-radius: 12px;
+  border: 1px solid #2a2a3c;
+  transition: 0.25s;
+  border-radius: 16px;
+}
+
+.media-card:hover {
+  border-color: #a533ff;
+  box-shadow: 0 0 20px #a533ff66;
+}
+
+.media-thumb {
+  position: relative;
+      height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.media-thumb img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.play-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 0 8px black;
+}
+
+/* Related Creators */
+.related-scroll {
+  scrollbar-width: none;
+}
+
+.related-card {
+  min-width: 120px;
+}
+
+.related-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #a533ff;
+  box-shadow: 0px 0px 15px #a533ff;
+}
+
+.related-name {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
