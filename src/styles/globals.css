@@ -542,7 +542,7 @@ border: 1px solid rgba(168,85,247,0.3) !important;
 /* login */
 
 .login-wrapper {
-  background: radial-gradient(circle at 30% 30%, #24143a, #0c0c0c 90%);
+  /* background: radial-gradient(circle at 30% 30%, #24143a, #0c0c0c 90%); */
   min-height: 100vh;
 }
 
@@ -730,3 +730,60 @@ margin: auto;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
 }
 
+
+
+/* admin css */
+
+/* Layout */
+.dashboard-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #111827;
+  color: white;
+  height: 100vh;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.sidebar-link:hover {
+  background: #1f2937;
+  color: white;
+}
+
+/* Topbar */
+.topbar {
+  height: 70px;
+  background: #1f2937;
+}
+
+.search-bar .search-input {
+  height: 42px;
+  border-radius: 50px;
+  padding-left: 20px;
+  background: #f3f4f6;
+}
+
+/* Content */
+.content-wrapper {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  background: #f9fafb;
+}
+
+/* Stats Boxes */
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}

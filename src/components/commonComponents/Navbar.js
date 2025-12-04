@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
@@ -50,9 +51,9 @@ const Navbar = () => {
 
           <div className="d-flex align-items-center gap-3 justify-content-center mt-3 mt-md-0">
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <Link href="/auth/login" className="nav-link">
                 Login/Signup
-              </a>
+              </Link>
             </li>
             <div className="profile-icon">D</div>
           </div>

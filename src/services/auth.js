@@ -1,9 +1,11 @@
-import API from "./api";
+import API from "../pages/api/api";
 import Cookies from "js-cookie";
 
 export const loginUser = async (data) => {
   const res = await API.post("/auth/login", data);
-  Cookies.set("token", res.data.token);
+  if (res.data.token) {
+    Cookies.set("token", res.data.token);
+  }
   return res.data;
 };
 

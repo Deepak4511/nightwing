@@ -1,6 +1,6 @@
 
       import React, { useState } from "react";
-import api from "../api/api";
+import API from "../api/api";
 
 
 const Register = () => {
@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await api.post("/auth/register", formData);
+      const res = await API.post("/auth/register", formData);
       setMessage(res.data.message);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
