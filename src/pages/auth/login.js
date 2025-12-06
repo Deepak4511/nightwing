@@ -1,89 +1,112 @@
 import React, { useState } from "react";
-import { loginUser } from "../../services/auth";
-import { useRouter } from "next/router";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Link from "next/link";
+
+const API = "http://localhost:5000/api/auth";
 
 const Login = () => {
-  const router = useRouter();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     setLoading(true);
 
     try {
-      const res = await loginUser({ email, password });
+      const res = await axios.post(`${API}/login`, formData);
 
-      if (!res.success) {
-        setError(res.message);
-        setLoading(false);
-        return;
+      if (res.data.success) {
+        toast.success("Login Successful!");
+
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        localStorage.setItem("isLoggedIn", "true");
+
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1000);
+      } else {
+        toast.error(res.data.message);
       }
-
-      // Redirect after login
-      router.push("/admin");
-    } catch (err) {
-      setError("Something went wrong.");
-      console.log(err);
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Login failed");
     }
 
     setLoading(false);
   };
 
   return (
-    <div className="login-wrapper d-flex align-items-center justify-content-center vh-100">
-      <div className="login-card p-5 text-center">
-        <h2 className="fw-bold mb-4 neon-text">Welcome Back</h2>
-        <p className="text-light mb-4">Sign in to continue your journey</p>
+    <div className="login-page d-flex justify-content-center align-items-center my-5">
+      <div className="login-card p-4 p-md-5">
 
-        <form onSubmit={handleLogin}>
-          <div className="form-group mb-4 text-start">
-            <label className="text-light mb-2">Email address</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control form-control-lg neon-input"
-              placeholder="Enter your email"
-              required
-            />
+        <div className="text-center mb-4">
+          <div className="login-icon mb-3">
+            <i className="bi bi-shield-lock"></i>
+          </div>
+          <h2 className="title">Welcome Back</h2>
+          <p className="subtitle">Log in to access your dashboard and explore more features.</p>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          
+          {/* Email */}
+          <div className="mb-3">
+            <label className="form-label">Email address</label>
+            <div className="input-wrapper">
+              <i className="bi bi-envelope input-icon"></i>
+              <input
+                type="email"
+                name="email"
+                className="form-control neon-input"
+                placeholder="Enter your email"
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
 
-          <div className="form-group mb-4 text-start">
-            <label className="text-light mb-2">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-control form-control-lg neon-input"
-              placeholder="Enter your password"
-              required
-            />
+          {/* Password */}
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <div className="input-wrapper">
+              <i className="bi bi-lock input-icon"></i>
+              <input
+                type="password"
+                name="password"
+                className="form-control neon-input"
+                placeholder="Enter password"
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
 
-          {error && (
-            <p className="text-danger fw-bold mb-3 text-start">{error}</p>
-          )}
+          <div className="text-end mb-4">
+            <a href="#" className="forgot-link">Forgot Password?</a>
+          </div>
 
-          <button
-            type="submit"
-            className="btn btn-neon w-100 py-2 mb-3"
-            disabled={loading}
-          >
-            {loading ? "Please wait..." : "Login"}
+          <button type="submit" className="btn neon-btn w-100" disabled={loading}>
+            {loading ? "Please wait..." : "Login →"}
           </button>
 
-          <p className="text-light mt-3 mb-0">
-            Don’t have an account?{" "}
-            <a href="/register" className="neon-link">
-              Register
-            </a>
+          <p className="text-center mt-4 register-text">
+            Don't have an account? <Link href="/auth/register">Register</Link>
           </p>
+
         </form>
+
       </div>
     </div>
   );

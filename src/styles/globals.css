@@ -602,6 +602,104 @@ border: 1px solid rgba(168,85,247,0.3) !important;
 
 /* register */
 
+/* Full page background */
+.register-page {
+  min-height: 100vh;
+  /* background: radial-gradient(circle at center, #1b1f39, #0d0f22); */
+  padding: 20px;
+}
+
+.form-control:focus {
+    background-color: unset;
+    color: #fff;
+}
+
+.neon-input::placeholder {
+  color: #fff; 
+  opacity: 1;     
+}
+
+.neon-input:focus::placeholder {
+  color: #ffff;      
+}
+
+/* Card */
+.register-card {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(20, 24, 45, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(90, 75, 200, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* Top icon circle */
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  background: rgba(100, 80, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: #9d78ff;
+}
+
+/* Titles */
+.title {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.subtitle {
+  color: #b6b9cc;
+  font-size: 15px;
+}
+
+/* Inputs */
+.neon-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.neon-input:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 10px rgba(124, 77, 255, 0.6);
+}
+
+/* Button */
+.neon-btn {
+  background: linear-gradient(90deg, #6a34ff, #9c4dff);
+  padding: 12px;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 25px rgba(120, 60, 255, 0.4);
+  transition: 0.2s;
+}
+
+.neon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(140, 80, 255, 0.55);
+}
+
+/* Text links */
+.login-link a,
+.form-check-label a {
+  color: #a974ff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
 
 
 /* profile */
@@ -787,3 +885,30 @@ margin: auto;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* admin css */
+
+
+
+
