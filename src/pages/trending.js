@@ -4,11 +4,11 @@ import React from "react";
 
 const CreatorPage = () => {
   const creators = [
-    { image: "", name: "AnyaBlade", followers: "5.2M", likes: "890.1K" },
-    { image: "", name: "TheDuoLife", followers: "2.1M", likes: "320K" },
-    { image: "", name: "CyberNova", followers: "980K", likes: "140K" },
-    { image: "", name: "ShadowX", followers: "950K", likes: "410K" },
-  ];
+    { id: "1", name: "Jax Teller", handle: "@JaxTeller", imageUrl: "https://picsum.photos/400/500?random=10", followers: "1.8M", category: "Photography" },
+  { id: "2", name: "Amber XOXO", handle: "@AmberXOXO", imageUrl: "https://picsum.photos/400/500?random=11", followers: "2.1M", category: "Lifestyle" },
+  { id: "3", name: "TheDuoLife", handle: "@TheDuoLife", imageUrl: "https://picsum.photos/400/500?random=12", followers: "430K", category: "Travel" },
+  { id: "4", name: "StyleMuse", handle: "@StyleMuse", imageUrl: "https://picsum.photos/400/500?random=13", followers: "3.4M", category: "Fashion" },
+];
 
   return (
     <div className="creator-page min-vh-100 py-5">
@@ -39,10 +39,11 @@ const CreatorPage = () => {
 
         {/* Explore Section */}
         <h5 className="text-uppercase text-light mb-3">Explore Creators</h5>
+        <p className="mb-5">Most engaging creators this week</p>
         <div className="row g-4">
-          {creators.map((creator, index) => (
-            <div key={index} className="col-6 col-md-3">
-              <CreatorCard {...creator} />
+          {creators.map((creator) => (
+            <div key={creator.id} className="col-6 col-md-3">
+              <CreatorCard creator={creator} variant="info" />
             </div>
           ))}
         </div>

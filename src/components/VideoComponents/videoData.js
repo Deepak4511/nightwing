@@ -1,0 +1,107 @@
+// import { Video, User, Comment } from './types';
+
+export const CURRENT_USER = {
+  id: 'u1',
+  name: 'Hazey Haley',
+  handle: '@HazeyHaley',
+  avatarUrl: 'https://picsum.photos/id/64/200/200',
+  bio: 'Digital artist, enethelast, and content creator focused on cyber aesthetics.',
+  isVerified: true,
+};
+
+export const MOCK_COMMENTS = [
+  {
+    id: 'c1',
+    user: { id: 'u2', name: 'Symtrive', handle: '@Symtrive', avatarUrl: 'https://picsum.photos/id/237/100/100', bio: '' },
+    text: 'The color grading on this is absolutely insane! 🔥',
+    timestamp: '2h ago',
+    likes: 24,
+  },
+  {
+    id: 'c2',
+    user: { id: 'u3', name: 'CyberPunkMac', handle: '@CyberPunkMac', avatarUrl: 'https://picsum.photos/id/129/100/100', bio: '' },
+    text: 'Waiting for the tutorial on how you did those transitions.',
+    timestamp: '5h ago',
+    likes: 12,
+  },
+  {
+    id: 'c3',
+    user: { id: 'u4', name: 'NeonDreams', handle: '@NeonDr', avatarUrl: 'https://picsum.photos/id/449/100/100', bio: '' },
+    text: 'This vibe is exactly what I needed this morning.',
+    timestamp: '1d ago',
+    likes: 8,
+  }
+];
+
+export const MOCK_VIDEOS = [
+  {
+    id: 'v1',
+    title: 'Cybernetic Cityscape Morning Routine',
+    description: 'Join me as I explore the neon-drenched streets of Neo-Tokyo at dawn. We look at the architecture, the silent drones, and the coffee shops that never sleep.',
+    thumbnailUrl: 'https://picsum.photos/seed/cyber1/800/450',
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    views: '1.5M',
+    date: 'Dec 15, 2024',
+    duration: '12:45',
+    tags: ['Vlog', 'FutureLife', 'DailyGrind'],
+    creator: CURRENT_USER,
+    likes: 154000,
+    comments: MOCK_COMMENTS,
+  },
+  {
+    id: 'v2',
+    title: 'Neural Link Installation Guide',
+    description: 'Step by step tutorial on safe home installation.',
+    thumbnailUrl: 'https://picsum.photos/seed/cyber2/800/450',
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+    views: '890K',
+    date: 'Dec 10, 2024',
+    duration: '08:20',
+    tags: ['Tech', 'Tutorial', 'Mod'],
+    creator: CURRENT_USER,
+    likes: 45000,
+    comments: [],
+  },
+  {
+    id: 'v3',
+    title: 'Flying Car Review: Model X-99',
+    description: 'Is it worth the credits? Let\'s find out.',
+    thumbnailUrl: 'https://picsum.photos/seed/cyber3/800/450',
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    views: '2.1M',
+    date: 'Dec 05, 2024',
+    duration: '15:10',
+    tags: ['Review', 'Cars', 'Future'],
+    creator: CURRENT_USER,
+    likes: 200000,
+    comments: [],
+  },
+  {
+    id: 'v4',
+    title: 'Hacking the Mainframe ASMR',
+    description: 'Relaxing keyboard sounds and green code rain.',
+    thumbnailUrl: 'https://picsum.photos/seed/cyber4/800/450',
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+    views: '400K',
+    date: 'Nov 28, 2024',
+    duration: '45:00',
+    tags: ['ASMR', 'Coding', 'Relax'],
+    creator: CURRENT_USER,
+    likes: 12000,
+    comments: [],
+  },
+  {
+    id: 'v5',
+    title: 'Night Market Street Food',
+    description: 'Trying synth-noodles and plasma-juice.',
+    thumbnailUrl: 'https://picsum.photos/seed/cyber5/800/450',
+    videoUrl: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+    views: '3.2M',
+    date: 'Nov 20, 2024',
+    duration: '10:30',
+    tags: ['Food', 'Travel', 'Vlog'],
+    creator: CURRENT_USER,
+    likes: 310000,
+    comments: [],
+  }
+];

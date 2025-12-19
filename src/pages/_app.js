@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Anybody } from "next/font/google";
 import Footer from "@/components/commonComponents/Footer";
 
 import "@/styles/globals.css";
+import "@/styles/nightwing-dropdown.css";
 import Head from "next/head";
 import Navbar from "@/components/commonComponents/Navbar";
-import { Router } from "next/router";
 import { useRouter } from "next/router";
 
 const geistSans = Geist({
@@ -18,9 +18,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const anybody = Anybody({
+  variable: "--font-anybody",
+  subsets: ["latin"],
+});
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-   // hide Navbar + Footer on admin pages
+  // hide Navbar + Footer on admin pages
   const isAdminRoute = router.pathname.startsWith("/admin");
   return (
     <>
@@ -31,16 +42,17 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-       
       </Head>
-       <div className="nightwing-bg">
-        {!isAdminRoute && <Navbar />}
+      <div
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${anybody.variable} nightwing-bg`}
+      >
+        <Navbar />
 
         <main>
           <Component {...pageProps} />
         </main>
 
-        {!isAdminRoute && <Footer />}
+        <Footer />
       </div>
     </>
   );

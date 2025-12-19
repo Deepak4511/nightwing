@@ -7,6 +7,7 @@ import ExploreCreator from "@/components/HomeComponents/ExploreCreator";
 import Categories from "@/components/HomeComponents/Categories";
 import StatsSection from "@/components/HomeComponents/StatsSection";
 import NewCreator from "@/components/HomeComponents/NewCreator";
+import CTASection from "@/components/HomeComponents/CtaSection";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
      <Categories/>
      <TrendingCreators/>
      <NewCreator/>
+     <CTASection/>
     </div>
   );
 }

@@ -3,6 +3,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
+import Cookies from "js-cookie";
+
 const API = "http://localhost:5000/api/auth";
 
 const Login = () => {
@@ -34,6 +36,10 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(res.data.user));
         localStorage.setItem("isLoggedIn", "true");
 
+        // Set Cookie for Middleware
+        Cookies.set("token", res.data.token, { expires: 7 }); // 7 days
+        Cookies.set("isLoggedIn", "true", { expires: 7 });
+
         setTimeout(() => {
           window.location.href = "/";
         }, 1000);
@@ -50,17 +56,17 @@ const Login = () => {
   return (
     <div className="login-page d-flex justify-content-center align-items-center my-5">
       <div className="login-card p-4 p-md-5">
-
         <div className="text-center mb-4">
           <div className="login-icon mb-3">
             <i className="bi bi-shield-lock"></i>
           </div>
           <h2 className="title">Welcome Back</h2>
-          <p className="subtitle">Log in to access your dashboard and explore more features.</p>
+          <p className="subtitle">
+            Log in to access your dashboard and explore more features.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit}>
-          
           {/* Email */}
           <div className="mb-3">
             <label className="form-label">Email address</label>
@@ -94,19 +100,23 @@ const Login = () => {
           </div>
 
           <div className="text-end mb-4">
-            <a href="#" className="forgot-link">Forgot Password?</a>
+            <a href="#" className="forgot-link">
+              Forgot Password?
+            </a>
           </div>
 
-          <button type="submit" className="btn neon-btn w-100" disabled={loading}>
+          <button
+            type="submit"
+            className="btn neon-btn w-100"
+            disabled={loading}
+          >
             {loading ? "Please wait..." : "Login →"}
           </button>
 
           <p className="text-center mt-4 register-text">
             Don't have an account? <Link href="/auth/register">Register</Link>
           </p>
-
         </form>
-
       </div>
     </div>
   );

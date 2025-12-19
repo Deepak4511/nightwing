@@ -1,47 +1,52 @@
-
 import React from "react";
+import { Camera, Music, PenTool, Video, Gamepad2 } from "lucide-react";
 
-import { FaCamera, FaMusic, FaPaintBrush, FaFilm } from "react-icons/fa";
+const categories = [
+  { id: "1", name: "Photography", count: "120K Creators", icon: <Camera size={24} />, gradient: "blue-cyan" },
+  { id: "2", name: "Music", count: "90K Creators", icon: <Music size={24} />, gradient: "purple-pink" },
+  { id: "3", name: "Art & Design", count: "150K Creators", icon: <PenTool size={24} />, gradient: "orange-red" },
+  { id: "4", name: "Film & Media", count: "200K Creators", icon: <Video size={24} />, gradient: "green-emerald" },
+  { id: "5", name: "Gaming", count: "300K Creators", icon: <Gamepad2 size={24} />, gradient: "indigo-purple" },
+  { id: "1", name: "Photography", count: "120K Creators", icon: <Camera size={24} />, gradient: "blue-cyan" },
+];
 
 const Categories = () => {
-  const categories = [
-    { name: "Photography", count: "120K Creators", icon: <FaCamera /> },
-    { name: "Music", count: "90K Creators", icon: <FaMusic /> },
-    { name: "Art & Design", count: "150K Creators", icon: <FaPaintBrush /> },
-    { name: "Film & Media", count: "200K Creators", icon: <FaFilm /> },
-    { name: "Film & Media", count: "200K Creators", icon: <FaFilm /> },
-  ];
-
   return (
-    <section className="mx-auto px-4 py-5" style={{ maxWidth: "1200px" }}>
-      {/* Heading */}
-      <div className="mb-5 d-flex justify-content-between align-items-center">
-        <div>
-        <h2 className="fw-bold text-white" style={{ fontSize: "1.8rem" }}>
-          <span className="gradient-text">Creator Categories</span>
-        </h2>
-        <p className="mt-2 text-secondary">Explore creators by niche</p>
-        </div>
-        <a href="#" className="view_more_btn">View More</a>
-      </div>
+    <section id="categories" className="categories-section">
+      <div className="container">
 
-      {/* Category Buttons */}
-      <div className="d-flex gap-3 flex-wrap pb-3 justify-content-center">
-        {categories.map((category, idx) => (
-          <button key={idx} className="category-btn ">
-            <div className="d-flex align-items-center gap-3">
-              <span className="fs-3">{category.icon}</span>
-              <div className="text-start">
-                <p className="fw-semibold text-white mb-0">{category.name}</p>
-                <p className=" small mb-0" style={{ color: "#a855f7" }}>{category.count}</p>
+        {/* Header */}
+        <div className="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <h2 className="categories-title">Creator Categories</h2>
+            <p className="categories-subtext">Explore creators by their specific niche</p>
+          </div>
+
+          <button className="view-all-btn">View All Categories</button>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="row g-3">
+          {categories.map((cat) => (
+            <div key={cat.id} className="col-12 col-sm-6 col-lg-2">
+              <div className="category-card">
+                <div className={`category-icon ${cat.gradient}`}>
+                  {cat.icon}
+                </div>
+
+                <h3 className="category-name">{cat.name}</h3>
+                <p className="category-count">{cat.count}</p>
               </div>
             </div>
-          </button>
-        ))}
+          ))}
+
+          {/* Fix Bootstrap: last column empty adjustment for 5 items */}
+          <div className="d-none d-lg-block col-lg-1"></div>
+        </div>
+
       </div>
     </section>
   );
 };
 
 export default Categories;
-
